@@ -1,6 +1,6 @@
 # Sky Sense App
 
-The Sky Sense App is a Flutter application that provides weather information based on the city name. It utilizes the Bloc pattern to manage state and provide a seamless user experience. This README file will guide you through the installation and usage of the app.
+The Sky Sense App is a Flutter application that provides weather information based on the city name. It utilizes the Bloc pattern to manage state and the Hydrated Bloc library to persist the state of its Bloc, enabling the app to seamlessly restore previous data and provide a seamless user experience even after the app is restarted or reopened. This README file will guide you through the installation and usage of the app.
 
 ## Features
 
@@ -51,3 +51,7 @@ The Sky Sense App was created with the help of the following open-source librari
 Flutter: https://flutter.dev/
 
 Bloc: https://pub.dev/packages/bloc
+
+Hydrated Bloc: https://pub.dev/packages/hydrated_bloc
+
+Dotenv: https://pub.dev/packages/flutter_dotenv
