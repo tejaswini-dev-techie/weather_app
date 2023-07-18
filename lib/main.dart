@@ -2,6 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:sky_sense/bloc_components/internet_cubit/internet_cubit.dart';
 import 'package:sky_sense/bloc_components/utility/bloc_observer.dart';
 import 'package:sky_sense/config/themes/app_themes.dart';
@@ -9,9 +10,14 @@ import 'package:sky_sense/constants/routing_constants.dart';
 import 'package:sky_sense/constants/string_constants.dart';
 import 'package:sky_sense/config/router/app_router.dart';
 import 'package:sky_sense/modules/weather_screen/weather_bloc/weather_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env");
+
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: await getApplicationDocumentsDirectory(),
+  );
 
   /* BlocObserver: Debug and Observe the Bloc easily */
   Bloc.observer = AppBlocObserver();
