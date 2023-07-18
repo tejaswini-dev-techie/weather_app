@@ -21,23 +21,19 @@ To install and run the Sky Sense App, follow these steps:
 - Clone the repository to your local machine:
 ```
 git clone https://github.com/your-username/sky-sense-app.git
-
 ```
 - Change into the project directory:
 ```
 cd sky-sense-app
-
 ```
 - Install the required dependencies using Flutter:
 ```
 flutter pub get
-
 ```
 - Connect a physical device or start an emulator.
 - Run the app:
 ```
 flutter run
-
 ```
 
 ## Usage
