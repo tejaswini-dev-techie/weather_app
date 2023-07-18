@@ -1,15 +1,20 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sky_sense/modules/weather_screen/models/weather_model.dart';
 import 'package:sky_sense/utils/services/rest_api_service.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';
 
-class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  WeatherBloc() : super(WeatherState.initial()) {
+class WeatherBloc extends Bloc<WeatherEvent, WeatherState> with HydratedMixin {
+  WeatherBloc()
+      : super(const WeatherState(
+          status: WeatherStateStatus.loading,
+          weatherModel: null,
+        )) {
     on<FetchWeatherDetails>((event, emit) async {
       await _onWeatherApiCallEvent(event, emit);
     });
@@ -33,13 +38,40 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         );
         (weatherModel != null)
             ? emit(state.copyWith(
-                weatherModel: weatherModel, status: WeatherStateStatus.loaded))
-            : emit(state.copyWith(status: WeatherStateStatus.noData));
+                weatherModel: weatherModel,
+                status: WeatherStateStatus.loaded,
+              ))
+            : emit(state.copyWith(
+                status: WeatherStateStatus.noData, weatherModel: null));
       } else {
-        emit(state.copyWith(status: WeatherStateStatus.loading));
+        emit(state.copyWith(
+            status: WeatherStateStatus.loading, weatherModel: null));
       }
     } catch (e) {
-      emit(state.copyWith(status: WeatherStateStatus.error));
+      emit(
+          state.copyWith(status: WeatherStateStatus.error, weatherModel: null));
+    }
+  }
+
+  @override
+  WeatherState? fromJson(Map<String, dynamic> json) {
+    try {
+      final weather = WeatherDataModel.fromJson(json);
+      return WeatherState(
+        status: WeatherStateStatus.loaded,
+        weatherModel: weather,
+      );
+    } catch (e) {
+      return null;
+    }
+  }
+
+  @override
+  Map<String, dynamic>? toJson(WeatherState state) {
+    if (state.status == WeatherStateStatus.loaded) {
+      return state.weatherModel?.toJson();
+    } else {
+      return null;
     }
   }
 }

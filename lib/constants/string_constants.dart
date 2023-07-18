@@ -22,4 +22,7 @@ class StringConstants {
   static const String uvText = "UV Index";
   static const String pressureText = "Pressure";
   static const String somethingWrongText = "Something Went Wrong!!. Try Again.";
+  static const String exitTitle = "Are you sure you want to exit?";
+  static const String noText = "No";
+  static const String yesText = "Yes";
 }
