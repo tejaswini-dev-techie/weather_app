@@ -19,17 +19,25 @@ The Sky Sense App offers the following weather information for a given city:
 To install and run the Sky Sense App, follow these steps:
 
 - Clone the repository to your local machine:
-```git clone https://github.com/your-username/sky-sense-app.git
+```
+git clone https://github.com/your-username/sky-sense-app.git
+
 ```
 - Change into the project directory:
-```cd sky-sense-app
+```
+cd sky-sense-app
+
 ```
 - Install the required dependencies using Flutter:
-```flutter pub get
+```
+flutter pub get
+
 ```
 - Connect a physical device or start an emulator.
 - Run the app:
-```flutter run
+```
+flutter run
+
 ```
 
 ## Usage
@@ -45,4 +53,5 @@ To install and run the Sky Sense App, follow these steps:
 The Sky Sense App was created with the help of the following open-source libraries and APIs:
 
 Flutter: https://flutter.dev/
+
 Bloc: https://pub.dev/packages/bloc
