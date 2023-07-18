@@ -40,7 +40,7 @@ flutter run
 
 - Launch the Sky Sense App on your device.
 - Enter the name of a city in the provided input field.
-- Press the "Search" button or submit the form to retrieve the weather information for the specified city.
+- Perform the "Search" to retrieve the weather information for the specified city.
 - The weather information will be displayed on the screen, including temperature, wind speed, cloud cover, precipitation, humidity, UV index, and pressure.
 - To search for the weather of another city, repeat steps 2 to 4.
 
