@@ -1,6 +1,6 @@
 # Sky Sense App - Hydrated Bloc
 
-The Sky Sense App is a Flutter application that provides weather information based on the city name. It utilizes the Bloc pattern to manage state and the Hydrated Bloc library to persist the state of its Bloc, enabling the app to seamlessly restore previous data and provide a seamless user experience even after the app is restarted or reopened. This README file will guide you through the installation and usage of the app.
+The Sky Sense App is a Flutter application that provides weather information based on the city name. It utilizes the Bloc pattern to manage the state and the Hydrated Bloc library to persist the state of its Bloc, enabling the app to seamlessly restore previous data and provide a seamless user experience even after the app is restarted or reopened. This README file will guide you through the installation and usage of the app.
 
 ## Implementation
 
@@ -9,7 +9,7 @@ Delve into the comprehensive guide on medium, where we unravel the intricacies o
 
 Ready to dive in? Follow the link below:
 
-https://medium.com/@dtejaswini.06/hydrated-bloc-in-flutter-simplifying-state-management-258542723a6c
+[Explore Now](https://medium.com/@dtejaswini.06/hydrated-bloc-in-flutter-simplifying-state-management-258542723a6c)
 
 ## Features
 
